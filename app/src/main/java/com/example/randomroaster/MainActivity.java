@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,13 +25,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void vincentPress (View view){
         TextView textView = findViewById(R.id.roastText);
-        textView.setText("Vincent " + "roast 1");
+        final String[] vinceInsults = {"roast 1", "roast 2", "roast 3", "roast 4"};
+        Random random = new Random();
+        int index = random.nextInt(vinceInsults.length);
+        textView.setText("Vincent " + vinceInsults[index]);
+
 
     }
 
     public void zoeyPress (View view){
         TextView textView = findViewById(R.id.roastText);
-        textView.setText("Zoey " + "roast 2");
+        final String[] zoeyInsults = {"roast 1", "roast 2", "roast 3", "roast 4"};
+        Random random = new Random();
+        int index = random.nextInt(zoeyInsults.length);
+        textView.setText("Zoey " + zoeyInsults[index]);
+
 
     }
 }
